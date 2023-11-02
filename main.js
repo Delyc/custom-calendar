@@ -32,7 +32,7 @@ var months = [
   "December",
 ];
 
-var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+var days = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
 
 var $dataHead = "<tr>";
 for (let dhead in days) {
@@ -103,7 +103,7 @@ function previous(event) {
 let dateArr = [];
 function showCalendar(month, year, element = "calendar-body-first") {
   monthAndYear = document.getElementById(`${element}-monthAndYear`);
-  var firstDay = new Date(year, month - 1).getDay();
+  var firstDay = new Date(year, month - 1).getDay() - 1;
   tbl = document.getElementById(element);
   tbl.innerHTML = "";
   monthAndYear.innerHTML = months[month - 1] + " " + year;
@@ -160,6 +160,7 @@ function showCalendar(month, year, element = "calendar-body-first") {
             ) {
               console.log("selectedStartDate ----", selectedStartDate);
               selectedStartDate = selectedEndDate;
+
               selectedEndDate = null;
             }
             // Highlight the selected date
@@ -175,7 +176,13 @@ function showCalendar(month, year, element = "calendar-body-first") {
             currentDate <= selectedEndDate
           ) {
             cell.classList.add("highlighted");
+            console.log(document.getElementById("search"), " ppp");
+            document.getElementById("search").classList.add("searchActive");
           }
+
+          // if (selectedStartDate && selectedEndDate) {
+          //   document.getElementById("search").classList.add("searchActive");
+          // }
         }
 
         row.appendChild(cell);
@@ -195,9 +202,9 @@ function daysInMonth(iMonth, iYear) {
 
 function highlightDatesBetween(startDate, endDate) {
   var dateCells = document.querySelectorAll(".date-picker");
-
+  document.getElementById("search").classList.remove("searchActive");
   dateCells.forEach(function (cell) {
-    cell.classList.remove("highlighted", "blue-background"); 
+    cell.classList.remove("highlighted", "blue-background");
   });
 
   if (startDate && endDate) {
@@ -214,9 +221,13 @@ function highlightDatesBetween(startDate, endDate) {
       ).getTime();
 
       if (cellDate >= firstDate && cellDate <= lastDate) {
+        document.getElementById("search").classList.add("searchActive");
+
         cell.classList.add("highlighted");
+
         if (cellDate === firstDate) {
           cell.classList.add("blue-background");
+          // document.getElementById("search").classList.remove("searchActive");
         }
         if (cellDate === lastDate) {
           cell.classList.add("blue-background");

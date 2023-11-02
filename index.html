@@ -7,189 +7,215 @@
     <title>Laravel</title>
     <link rel="stylesheet" href="./public/style.css" />
     <style>
-      .date-picker {
-        cursor: pointer;
-      }
-
-      .date-picker.clicked {
-        background-color: #ccc;
-      }
-
-      /* .date-picker{
-        background-color: red;
-        height: 400px;
-        width: 400px;
-        margin: 2px;
-      } */
-
-      .start-date {
-        background-color: #0062e3;
-      }
-
-      .end-date {
-        background-color: #0062e3;
-      }
-
-      .highlighted {
-        background-color: #e6e6e6;
-        color: black;
-      }
-      .past-day {
-        pointer-events: none;
-        background-color: pink;
-        color: #E0E3E5;
-      }
-      body {
-        font-family: "Inter", sans-serif !important;
-      }
-      input[type="checkbox"]:checked {
-        accent-color: #359845;
-      }
-
-      body {
-        font-family: "Inter", sans-serif !important;
-      }
-      input[type="checkbox"]:checked {
-        accent-color: #359845;
-      }
-
-      .wrapper {
-        margin: 15px auto;
-        max-width: 1100px;
-      }
-
-      .container-calendar {
-        background: #ffffff;
-        /* padding: 15px; */
-        max-width: 800px;
-        margin: 0 auto;
-        overflow: auto;
-      }
-
-      .button-container-calendar button {
-        cursor: pointer;
-        display: inline-block;
-        zoom: 1;
-        background: #00a2b7;
-        color: #fff;
-        border: 1px solid #0aa2b5;
-        border-radius: 4px;
-        /* padding: 5px 10px; */
-      }
-      .blue-background {
-        background-color: blue;
-        color: white;
-      }
-      .table-calendar {
-        border-collapse: collapse;
-        width: 100%;
-      }
-
-      .table-calendar td,
-      .table-calendar th {
-        padding: 5px;
-        text-align: center;
-        vertical-align: top;
-      }
-
-      .date-picker.selected {
-        font-weight: bold;
-        outline: 1px dashed #00bcd4;
-      }
-
-      /* .date-picker.selected span {
-        border-bottom: 2px solid currentColor;
-      } */
-
-      #monthAndYear {
-        text-align: center;
-        margin-top: 0;
-      }
-
-      .button-container-calendar {
-        position: relative;
-        margin-bottom: 1em;
-        overflow: hidden;
-        clear: both;
-      }
-
-      #previous {
-        float: left;
-      }
-
-      #next {
-        float: right;
-      }
-
-      .footer-container-calendar {
-        margin-top: 1em;
-        border-top: 1px solid #dadada;
-        padding: 10px 0;
-      }
-
-      .footer-container-calendar select {
-        cursor: pointer;
-        display: inline-block;
-        zoom: 1;
-        background: #ffffff;
-        color: #585858;
-        border: 1px solid #bfc5c5;
-        border-radius: 3px;
-        padding: 5px 1em;
-      }
-
-      .low {
-        background-color: #65a30d;
-        width: 40px;
-        height: 40px;
-        border-radius: 4px;
-        display: grid;
-        place-content: center;
-        font-weight: 600;
-        color: white;
-      }
-
-      .high {
-        background-color: #dc2626;
-        width: 40px;
-        height: 40px;
-        border-radius: 4px;
-        display: grid;
-        place-content: center;
-        font-weight: 600;
-        color: white;
-      }
-
-      .medium {
-        background-color: #f59e0b;
-        width: 40px;
-        height: 40px;
-        border-radius: 4px;
-        display: grid;
-        place-content: center;
-        font-weight: 600;
-        color: white;
-      }
-      .table-calendar tbody tr td {
-        position: relative;
-        width: 40px;
-        height: 40px;
-      }
-      .red-background {
-        position: absolute;
-        background-color: blue;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-      }
-    </style>
+        .searchActive{
+          background-color: #7BA397 !important;
+          color: white !important;
+  
+        }
+        th {
+          font-weight: normal;
+          transition-property: all;
+        }
+        .date-picker {
+          cursor: pointer;
+          position: relative;
+          transition-property: all;
+     
+        }
+  
+        .date-picker.clicked {
+          background-color: #ccc;
+          transition-property: all;
+        }
+  
+        /* .start-date {
+          background-color: #0062e3;
+        }
+  
+        .end-date {
+          background-color: #0062e3;
+        } */
+        tr {
+          transition-property: all;
+        }
+        .highlighted {
+          background-color: #e6e6e6;
+          font-weight: 600;
+          color: black;
+          box-shadow: 0px 0px 1px 0px rgba(26, 32, 36, 0.32),
+            0px 1px 2px 0px rgba(91, 104, 113, 0.32) !important;
+          padding-top: 8px !important;
+          border-collapse: separate;
+          transition-property: all;
+        }
+        .past-day {
+          pointer-events: none;
+          color: #e0e3e5;
+        }
+        body {
+          font-family: "Inter", sans-serif !important;
+        }
+        input[type="checkbox"]:checked {
+          accent-color: #359845;
+        }
+  
+        body {
+          font-family: "Inter", sans-serif !important;
+        }
+        input[type="checkbox"]:checked {
+          accent-color: #359845;
+        }
+  
+        .wrapper {
+          margin: 15px auto;
+          max-width: 1100px;
+        }
+  
+        .container-calendar {
+          background: #ffffff;
+          max-width: 800px;
+          margin: 0 auto;
+          overflow: auto;
+          transition-property: all;
+        }
+  
+        /* .button-container-calendar button {
+          cursor: pointer;
+          display: inline-block;
+          zoom: 1;
+          background: #00a2b7;
+          color: #fff;
+          border: 1px solid #0aa2b5;
+          border-radius: 4px;
+        } */
+        .blue-background {
+          background-color: #0062e3;
+          font-weight: 600;
+          color: white;
+          border-radius: 4px;
+  
+        }
+        .table-calendar {
+          border-collapse: separate;
+          border-spacing: 2px 6px;
+  
+          width: 100%;
+        }
+  
+        .table-calendar td,
+        .table-calendar th {
+          padding: 5px;
+          text-align: center;
+          vertical-align: top;
+          transition-property: all;
+          min-width: 40px !important;
+          min-height: 40px !important;
+        }
+        .table-calendar th {
+          min-width: 1rem ;
+        }
+  
+  
+  
+        #monthAndYear {
+          text-align: center;
+          margin-top: 0;
+        }
+  
+        .button-container-calendar {
+          position: relative;
+          margin-bottom: 1em;
+          overflow: hidden;
+          clear: both;
+        }
+  
+        #previous {
+          float: left;
+        }
+  
+        #next {
+          float: right;
+        }
+  
+        .footer-container-calendar {
+          margin-top: 1em;
+          border-top: 1px solid #dadada;
+          padding: 10px 0;
+        }
+  
+        .footer-container-calendar select {
+          cursor: pointer;
+          display: inline-block;
+          zoom: 1;
+          background: #ffffff;
+          color: #585858;
+          border: 1px solid #bfc5c5;
+          /* border-radius: 3px; */
+          padding: 5px 1em;
+        }
+  
+        .low {
+          background-color: #65a30d;
+          width: 40px;
+          height: 40px;
+          /* border-radius: 4px; */
+          display: grid;
+          place-content: center;
+          /* font-weight: 600; */
+          color: white;
+        }
+  
+        .high {
+          background-color: #dc2626;
+          width: 40px;
+          height: 40px;
+          /* border-radius: 4px; */
+          display: grid;
+          place-content: center;
+          /* font-weight: 600; */
+          color: white;
+        }
+  
+        .medium {
+          background-color: #f59e0b;
+          width: 40px;
+          height: 40px;
+          /* border-radius: 4px; */
+          display: grid;
+          place-content: center;
+          /* font-weight: 600; */
+          color: white;
+        }
+        .table-calendar tbody tr td {
+          position: relative;
+          width: 40px;
+          height: 40px;
+        }
+        .red-background {
+          position: absolute;
+          background-color: #0062e3;
+          color: white;
+          font-weight: 600;
+          border-radius: 4px;
+          left: 0;
+          top: 0%;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .red-background span {
+          /* background-color: yellow; */
+          height: fit-content;
+        }
+      </style>
   </head>
 
-  <body class="font-inter">
+  <body class="font-inter h-screen w-screen flex flex-col items-center justify-center bg-black">
 
     <div
-    class="flex flex-col w-full gap-1 items-center lg:flex-row lg:gap-0 lg:justify-center xl:w-1135">
+    class="flex flex-col border w-1/2 gap-1 items-center lg:flex-row lg:gap-0 lg:justify-center xl:w-1135">
     <button
       @click="showContent = !showContent"
       class="lg:mr-[2px] bg-white px-5 h-10 lg:h-50 flex gap-3 items-center rounded lg:rounded-l-md lg:rounded-r-none w-full md:w-570 lg:w-302">
@@ -200,7 +226,7 @@
       <p
         class="text-xs font-semibold leading-4 text-[#525252] lg:leading-5 lg:text-sm"
         id="checkInButton">
-        Check In
+         Start date
       </p>
     </button>
 
@@ -214,74 +240,82 @@
       <p
         class="text-xs font-semibold leading-4 text-[#525252] lg:leading-5 lg:text-sm"
         id="checkOutButton">
-        Check Out
+        End date
       </p>
     </button>
 
 
   </div>
 
-    <div
-              x-show="showContent"
-              class="wrapper md:w-[724px] absolute top-[40px] md:top-0 lg:top-[107px]">
-              <div class="container-calendar rounded-md">
-                <div class="flex lg:items-center lg:gap-[15px] justify-between">
-                  <div class="md:h-[50px] md:w-[25px] w-[15px] h-[30px]">
-                    <button
-                      id="previous"
-                      onclick="previous(event)"
-                      class="flex items-start md:items-center mt-[25px] md:mt-0">
-                      <img
-                        src="./assets/prev.svg"
-                        class="w-full h-full" />
-                    </button>
-                  </div>
+  <div
+  class="wrapper md:w-[724px] ">
+  <div class="container-calendar rounded-md">
+    <div class="flex lg:items-center lg:gap-[15px] justify-between">
+      <div class="md:h-[50px] md:w-[25px] w-[15px] h-[30px]">
+        <button
+          id="previous"
+          onclick="previous(event)"
+          class="flex items-start md:items-center mt-[25px] md:mt-0">
+          <img
+            src="./assets/prev.svg"
+            class="w-full h-full" />
+        </button>
+      </div>
 
-                  <div
-                    class="calender-grid py-5 grid grid-cols-1 md:grid-cols-2 md:gap-[60px]">
-                    <div class="flex flex-col gap-3 w-full">
-                      <h3
-                        id="calendar-body-first-monthAndYear"
-                        class="text-[#083893] lg:text-base font-semibold lg:leading-6 text-center"></h3>
-                      <table class="table-calendar" data-lang="en">
-                        <thead
-                          id="thead-month-first"
-                          class="text-[#525252] lg:leading-6 text-sm lg:text-base !font-normal"></thead>
-                        <tbody
-                          id="calendar-body-first"
-                          class="text-black lg:leading-6 text-sm lg:text-base"></tbody>
-                      </table>
-                    </div>
+      <div
+        class="calender-grid py-5 grid grid-cols-1 md:grid-cols-2 md:gap-[60px]">
+        <div class="flex flex-col gap-3 w-full">
+          <h3
+            id="calendar-body-first-monthAndYear"
+            class="text-[#083893] lg:text-base font-semibold lg:leading-6 text-center"></h3>
+          <table class="table-calendar" data-lang="en">
+            <thead
+              id="thead-month-first"
+              class="text-[#525252] lg:leading-6 text-sm lg:text-base"></thead>
+            <tbody
+              id="calendar-body-first"
+              class="text-black lg:leading-6 text-sm lg:text-base"></tbody>
+          </table>
+        </div>
 
-                    <div class="md:flex md:flex-col gap-3 hidden">
-                      <h3
-                        id="calendar-body-second-monthAndYear"
-                        class="text-[#083893] lg:text-base font-semibold lg:leading-6 text-center"></h3>
-                      <table class="table-calendar" data-lang="en">
-                        <thead
-                          id="thead-month-second"
-                          class="text-[#525252] lg:leading-6 lg:text-base"></thead>
-                        <tbody
-                          id="calendar-body-second"
-                          class="text-black lg:leading-6 lg:text-base"></tbody>
-                      </table>
-                    </div>
-                  </div>
-                  <button
-                    id="next"
-                    onclick="next(event)"
-                    class="flex items-start md:items-center mt-[25px] md:mt-0">
-                    <img
-                      src="./assets/next.svg"
-                      class="md:h-[50px] md:w-[25px] w-[15px] h-[30px]" />
-                  </button>
-                </div>
+        <div class="md:flex md:flex-col gap-3 hidden">
+          <h3
+            id="calendar-body-second-monthAndYear"
+            class="text-[#083893] lg:text-base font-semibold lg:leading-6 text-center"></h3>
+          <table class="table-calendar" data-lang="en">
+            <thead
+              id="thead-month-second"
+              class="text-[#525252] lg:leading-6 lg:text-base"></thead>
+            <tbody
+              id="calendar-body-second"
+              class="text-black lg:leading-6 lg:text-base"></tbody>
+          </table>
+        </div>
+      </div>
+      <button
+        id="next"
+        onclick="next(event)"
+        class="flex items-start md:items-center mt-[25px] md:mt-0">
+        <img
+          src="./assets/next.svg"
+          class="md:h-[50px] md:w-[25px] w-[15px] h-[30px]" />
+      </button>
+    </div>
 
-                <div class="h-[1px] bg-[#ECECEC] w-full"></div>
+    <div class="h-[1px] bg-[#ECECEC] w-full"></div>
 
-
-              </div>
-            </div>
+    <div class="flex flex-col items-center gap-2.5 py-2.5 px-5">
+      <p class="text-[#525252] text-xs leading-5">
+        Please choose the dates to stay
+      </p>
+      <button
+        id="search"
+        class="w-full lg:w-[132px] h-10 bg-[#E5E5E5] rounded leading-4 font-bold text-sm text-[#7D7D7D]">
+        Search
+      </button>
+    </div>
+  </div>
+</div>
  
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
